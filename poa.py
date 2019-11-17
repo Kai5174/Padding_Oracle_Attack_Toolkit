@@ -65,11 +65,6 @@ class POAAnyEncrypt:
             c[ii] = a[ii]^b[ii]
         return c
     
-    @staticmethod
-    def get_current_C1(I0: bytearray, padding_value: int):
-        padding_masker = bytearray(b'\x00'*BLOCK_SIZE)
-    
-
     def encrypt_payload(self, payload: str):
         """
         C1 -- C0
@@ -88,7 +83,6 @@ class POAAnyEncrypt:
             I0 = bytearray(b'\x00'*BLOCK_SIZE)
             for curr_index in reversed(range(BLOCK_SIZE)):
                 padding_value = BLOCK_SIZE - curr_index
-                # print(padding_value)
 
                 masker = bytearray(b'\x00'*BLOCK_SIZE)
                 for kk in range(padding_value):
