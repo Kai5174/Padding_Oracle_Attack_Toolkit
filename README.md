@@ -14,3 +14,8 @@ python poa.py
 ```shell
 python VulServer.py
 ```
+
+# How to apply it into your application
+
+## Code Structure
+`poa.py` contains two classes `POACommunication` and `POAAnyEncrypt`. You can override corresponding method to make it work in different applications.
